@@ -108,8 +108,7 @@ const questions = {
       question: "Tumbuhan menyerap air dari tanah melalui?",
       choices: ["Daun", "Batang", "Akar", "Stomata"],
       correct: 2
-    }
-    [
+    },
   {
     question: "Fungsi utama akar pada tumbuhan adalah?",
     choices: ["Fotosintesis", "Menyerap air dan mineral", "Membawa oksigen", "Menarik serangga"],
