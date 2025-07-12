@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#container {
+  margin-top: 50px;
+  width: 90%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+  font-size: 30px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+/* Top Info (Skor dan Timer) */
+#topInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#scoreBox {
+  font-size: 18px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+#timerCircle {
+  width: 50px;
+  height: 50px;
+  background-color: #f5f6fa;
+  border: 2px solid #dcdde1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #e67e22;
+  font-size: 18px;
+}
+
+/* Soal */
+#questionBox {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Pilihan Jawaban */
+#choicesBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#choicesBox button {
+  width: 100%;
+  max-width: 400px;
+  margin: 8px 0;
+  background-color: #ecf0f1;
+  border: 1px solid #d0d7de;
+  color: #2c3e50;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#choicesBox button:hover {
+  background-color: #dcdde1;
+  transform: translateY(-2px);
+}
+
+#choicesBox button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Hasil */
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  animation: fadeIn 0.5s;
+}
+
+/* Tampilan Awal - Kategori */
+#startScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#startScreen h2 {
+  margin-bottom: 10px;
+}
+
+#categoryButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 5px;
+}
+
+#categoryButtons button {
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.2s;
+  color: white;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Warna kategori */
+#categoryButtons button:nth-child(1) {
+  background: linear-gradient(135deg, #4CAF50, #2ecc71);
+}
+#categoryButtons button:nth-child(2) {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+#categoryButtons button:nth-child(3) {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+#categoryButtons button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Tampilan End Screen */
+#endScreen {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-top: 2px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Tabel Ringkasan */
+#summaryTable {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+#summaryTable td {
+  border: 1px solid #aaa;
+  padding: 8px 12px;
+  background-color: #e6e6e6;
+  font-size: 16px;
+}
+
+/* Skor akhir dan ucapan */
+#finalScore {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+#thankYou {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #444;
+  font-style: italic;
+}
+
+/* Tombol Main Lagi */
+#restartBtn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#restartBtn:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}

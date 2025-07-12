@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Kuiz Pengetahuan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <!-- Tampilan Awal -->
+    <div id="startScreen">
+      <h1>Selamat Datang di Game Kuiz Pengetahuan</h1>
+      <h2>Pilih Kategori:</h2>
+
+      <div id="categoryButtons">
+        <button onclick="startQuiz('kimia')">Kategori Pertama: Kimia</button>
+        <button onclick="startQuiz('biologi')">Kategori Kedua: Biologi (Tumbuhan)</button>
+        <button onclick="startQuiz('fisika')">Kategori Ketiga: Fisika</button>
+      </div>
+
+      <div id="rules" style="margin-top: 20px; text-align: left;">
+        <h3>Rules:</h3>
+        <p>1. Pilih kategori</p>
+        <p>2. Tiap kategori memiliki 20 soal</p>
+        <p>3. Tiap soal memiliki 15 menit</p>
+      </div>
+    </div>
+
+    <!-- Tampilan Saat Kuiz Dimulai -->
+    <div id="quizBox" style="display: none;">
+      <h2 id="quizTitle"></h2> <!-- Judul Kategori Kuiz -->
+      <div id="topInfo">
+        <div id="scoreBox">Skor: 0</div>
+        <div id="timerCircle">
+          <span id="time">15</span>
+        </div>
+      </div>
+      <div id="questionBox"></div>
+      <div id="choicesBox"></div>
+      <div id="result"></div>
+    </div>
+
+    <!-- Tampilan Akhir (Hasil Kuiz) -->
+    <div id="endScreen" style="display: none;">
+      <h2>Ringkasan Jawaban</h2>
+      <table id="summaryTable">
+        <thead>
+          <tr><th>No</th><th>Benar / Salah</th></tr>
+        </thead>
+        <tbody id="summary"></tbody>
+      </table>
+
+      <div id="finalScore"></div>
+      <p id="thankYou">Terima kasih sudah bermain kuiz edukasi ini!</p>
+      <button id="restartBtn" onclick="restartGame()">Main Lagi</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
