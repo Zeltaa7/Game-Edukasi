@@ -83,32 +83,32 @@ const questions = {
     correct: 2
   }
 ],
-  biologi: [
-    {
-      question: "Apa yang dimaksud dengan fotosintesis?",
-      choices: ["Proses pembentukan sel darah", "Proses pembuatan makanan oleh tumbuhan", "Proses pembelahan sel", "Proses penguraian zat organik"],
-      correct: 1
-    },
-    {
-      question: "Bagian tumbuhan tempat terjadinya fotosintesis adalah?",
-      choices: ["Batang", "Akar", "Daun", "Bunga"],
-      correct: 2
-    },
-    {
-      question: "Apa fungsi stomata pada daun?",
-      choices: ["Menyerap cahaya", "Menyerap air", "Pertukaran gas", "Menarik serangga"],
-      correct: 2
-    },
-    {
-      question: "Klorofil terdapat pada organel?",
-      choices: ["Nukleus", "Vakuola", "Kloroplas", "Mitokondria"],
-      correct: 2
-    },
-    {
-      question: "Tumbuhan menyerap air dari tanah melalui?",
-      choices: ["Daun", "Batang", "Akar", "Stomata"],
-      correct: 2
-    },
+biologi: [
+  {
+    question: "Apa yang dimaksud dengan fotosintesis?",
+    choices: ["Proses pembentukan sel darah", "Proses pembuatan makanan oleh tumbuhan", "Proses pembelahan sel", "Proses penguraian zat organik"],
+    correct: 1
+  },
+  {
+    question: "Bagian tumbuhan tempat terjadinya fotosintesis adalah?",
+    choices: ["Batang", "Akar", "Daun", "Bunga"],
+    correct: 2
+  },
+  {
+    question: "Apa fungsi stomata pada daun?",
+    choices: ["Menyerap cahaya", "Menyerap air", "Pertukaran gas", "Menarik serangga"],
+    correct: 2
+  },
+  {
+    question: "Klorofil terdapat pada organel?",
+    choices: ["Nukleus", "Vakuola", "Kloroplas", "Mitokondria"],
+    correct: 2
+  },
+  {
+    question: "Tumbuhan menyerap air dari tanah melalui?",
+    choices: ["Daun", "Batang", "Akar", "Stomata"],
+    correct: 2
+  },
   {
     question: "Fungsi utama akar pada tumbuhan adalah?",
     choices: ["Fotosintesis", "Menyerap air dan mineral", "Membawa oksigen", "Menarik serangga"],
@@ -159,8 +159,7 @@ const questions = {
     choices: ["Paru-paru", "Jantung", "Lambung", "Ginjal"],
     correct: 1
   }
-]
-  ],
+],
   fisika: [
     {
       question: "Siapa yang menemukan hukum gravitasi?",
