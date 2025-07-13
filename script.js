@@ -83,32 +83,32 @@ const questions = {
     correct: 2
   }
 ],
-biologi: [
-  {
-    question: "Apa yang dimaksud dengan fotosintesis?",
-    choices: ["Proses pembentukan sel darah", "Proses pembuatan makanan oleh tumbuhan", "Proses pembelahan sel", "Proses penguraian zat organik"],
-    correct: 1
-  },
-  {
-    question: "Bagian tumbuhan tempat terjadinya fotosintesis adalah?",
-    choices: ["Batang", "Akar", "Daun", "Bunga"],
-    correct: 2
-  },
-  {
-    question: "Apa fungsi stomata pada daun?",
-    choices: ["Menyerap cahaya", "Menyerap air", "Pertukaran gas", "Menarik serangga"],
-    correct: 2
-  },
-  {
-    question: "Klorofil terdapat pada organel?",
-    choices: ["Nukleus", "Vakuola", "Kloroplas", "Mitokondria"],
-    correct: 2
-  },
-  {
-    question: "Tumbuhan menyerap air dari tanah melalui?",
-    choices: ["Daun", "Batang", "Akar", "Stomata"],
-    correct: 2
-  },
+  biologi: [
+    {
+      question: "Apa yang dimaksud dengan fotosintesis?",
+      choices: ["Proses pembentukan sel darah", "Proses pembuatan makanan oleh tumbuhan", "Proses pembelahan sel", "Proses penguraian zat organik"],
+      correct: 1
+    },
+    {
+      question: "Bagian tumbuhan tempat terjadinya fotosintesis adalah?",
+      choices: ["Batang", "Akar", "Daun", "Bunga"],
+      correct: 2
+    },
+    {
+      question: "Apa fungsi stomata pada daun?",
+      choices: ["Menyerap cahaya", "Menyerap air", "Pertukaran gas", "Menarik serangga"],
+      correct: 2
+    },
+    {
+      question: "Klorofil terdapat pada organel?",
+      choices: ["Nukleus", "Vakuola", "Kloroplas", "Mitokondria"],
+      correct: 2
+    },
+    {
+      question: "Tumbuhan menyerap air dari tanah melalui?",
+      choices: ["Daun", "Batang", "Akar", "Stomata"],
+      correct: 2
+    },
   {
     question: "Fungsi utama akar pada tumbuhan adalah?",
     choices: ["Fotosintesis", "Menyerap air dan mineral", "Membawa oksigen", "Menarik serangga"],
@@ -159,7 +159,7 @@ biologi: [
     choices: ["Paru-paru", "Jantung", "Lambung", "Ginjal"],
     correct: 1
   }
-],
+  ],
   fisika: [
     {
       question: "Siapa yang menemukan hukum gravitasi?",
@@ -221,22 +221,20 @@ biologi: [
     choices: ["Dibuang", "Dipercepat", "Diubah bentuknya", "Dihilangkan"],
     correct: 2
   },
-
-  // Soal perhitungan
   {
     question: "Jika sebuah benda bermassa 2 kg mengalami percepatan 3 m/s², berapakah gaya yang bekerja padanya?",
     choices: ["5 N", "6 N", "3 N", "9 N"],
-    correct: 1 // F = m * a = 2 * 3 = 6
+    correct: 1
   },
   {
     question: "Sebuah mobil menempuh jarak 100 meter dalam waktu 20 detik. Berapakah kecepatan mobil tersebut?",
     choices: ["2 m/s", "5 m/s", "10 m/s", "20 m/s"],
-    correct: 1 // v = s / t = 100 / 20 = 5
+    correct: 1
   },
   {
     question: "Jika sebuah bola memiliki massa 0,5 kg dan berada pada ketinggian 10 m, berapa energi potensialnya? (g = 10 m/s²)",
     choices: ["5 Joule", "10 Joule", "50 Joule", "100 Joule"],
-    correct: 2 // Ep = mgh = 0.5 * 10 * 10 = 50
+    correct: 2
   }
   ]
 };
@@ -246,7 +244,7 @@ function startQuiz(category) {
   currentQuestionIndex = 0;
   currentScore = 0;
   timeLeft = 15;
-  answerResults = []; // Reset jawaban saat mulai kuiz
+  answerResults = [];
 
   document.getElementById('quizTitle').innerText = `Kuiz ${category.charAt(0).toUpperCase() + category.slice(1)}`;
 
@@ -267,7 +265,7 @@ function startTimer() {
       clearInterval(timer);
       showCorrectAnswer("Waktu habis!");
       disableChoices();
-      answerResults.push('Salah'); // Jika waktu habis dianggap salah
+      answerResults.push('Salah');
       setTimeout(nextQuestion, 1500);
     }
   }, 1000);
@@ -297,11 +295,11 @@ function checkAnswer(selectedIndex) {
     document.getElementById('result').innerText = 'Jawaban Benar!';
     document.getElementById('result').style.color = 'green';
     document.getElementById('scoreBox').innerText = `Skor: ${currentScore}`;
-    answerResults.push('Benar'); // 2. Simpan jawaban benar
+    answerResults.push('Benar');
   } else {
     document.getElementById('result').innerText = `Jawaban Salah! Jawaban yang benar: ${questionData.choices[correctIndex]}`;
     document.getElementById('result').style.color = 'red';
-    answerResults.push('Salah'); // 2. Simpan jawaban salah
+    answerResults.push('Salah');
   }
 
   disableChoices();
@@ -320,27 +318,26 @@ function disableChoices() {
   buttons.forEach(button => button.disabled = true);
 }
 
-  function nextQuestion() {
-    timeLeft = 15;
-    if (currentQuestionIndex < questions[currentCategory].length - 1) {
-      currentQuestionIndex++;
-      loadQuestion();
-      startTimer();
-    } else {
-      clearInterval(timer);
-      endQuiz(); 
-    }
-  }
-
-  function endQuiz() {
+function nextQuestion() {
+  timeLeft = 15;
+  if (currentQuestionIndex < questions[currentCategory].length - 1) {
+    currentQuestionIndex++;
+    loadQuestion();
+    startTimer();
+  } else {
     clearInterval(timer);
-    document.getElementById('quizBox').style.display = 'none';
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('endScreen').style.display = 'block'; 
-    showSummary();
+    endQuiz(); 
   }
+}
 
-// 4. Fungsi showSummary
+function endQuiz() {
+  clearInterval(timer);
+  document.getElementById('quizBox').style.display = 'none';
+  document.getElementById('startScreen').style.display = 'none';
+  document.getElementById('endScreen').style.display = 'block'; 
+  showSummary();
+}
+
 function showSummary() {
   let summaryHTML = '';
   let benar = 0;
@@ -354,6 +351,35 @@ function showSummary() {
     summaryHTML += `<tr><td>${i + 1}</td><td>${status}</td></tr>`;
   }
 
+  const totalNilai = (benar + 5) * 5;
+
   document.getElementById('summary').innerHTML = summaryHTML;
-  document.getElementById('finalScore').innerHTML = `<h3>Total Skor: ${currentScore} / ${answerResults.length}<br>Benar: ${benar} | Salah: ${salah}</h3>`;
+  document.getElementById('finalScore').innerHTML = `
+    <h3>Total Skor: ${currentScore} / ${answerResults.length}<br>
+    Benar: ${benar} | Salah: ${salah}</h3>
+    <p><strong>Nilai Anda:</strong> ${totalNilai} / 100</p>
+  `;
 }
+
+function restartGame() {
+  // Reset nilai awal
+  currentCategory = '';
+  currentQuestionIndex = 0;
+  currentScore = 0;
+  timeLeft = 15;
+  answerResults = [];
+
+  // Sembunyikan layar akhir dan kuis
+  document.getElementById('endScreen').style.display = 'none';
+  document.getElementById('quizBox').style.display = 'none';
+
+  // Tampilkan layar awal dengan layout utuh
+  document.getElementById('startScreen').style.display = 'flex';
+
+  // Reset timer ke 15
+  document.getElementById('time').innerText = '15';
+
+  // Scroll ke atas untuk mencegah tampilan offset
+  window.scrollTo(0, 0);
+}
+
